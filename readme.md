@@ -303,9 +303,55 @@ Example of using the method.
   })
   await helper.MergeIntoMKV(dl, subtiles, video2dl)
 })()
-
 ```
 
-# License
+# Schemas
 
-The project is licensed under the MIT license.
+## SubtitleMeta
+
+```javascript
+{
+  path,
+  lang,
+  locale,
+  filename,
+  format,
+  country,
+  label,
+  type,
+  fan
+}
+```
+
+## VideoObjectSchema
+
+```javascript
+{
+  id,
+  duration,
+  fileSize,
+  videoType,
+  encodingData = {
+    encodeId
+    name
+    profile
+    width
+    height
+    videoBitrate
+    audioBitrate
+  },
+  source
+}
+```
+
+## LocalVideoObjectSchema
+
+```javascript
+{
+  path
+}
+```
+
+# License/Author Info
+
+Project developed and maintained by VishalRamki. The project is licensed under the MIT license.
