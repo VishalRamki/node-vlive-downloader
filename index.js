@@ -14,7 +14,6 @@ module.exports = function(helperOpts = null, browserOpts = {headless: true}) {
   */
   var paths = ['tmp/', 'tmp/srt/', 'tmp/vtt/', 'tmp/video/']
   for (var path of paths) {
-    console.log(path)
     checkOrCreateDir(path)
   }
   return {
