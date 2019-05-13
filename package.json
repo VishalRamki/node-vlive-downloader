@@ -1,6 +1,6 @@
 {
   "name": "node-vlive-downloader",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A Promise-based video and meta info VLive downloader",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   "dependencies": {
     "download": "^7.1.0",
     "fluent-ffmpeg": "^2.1.2",
+    "moment": "^2.24.0",
     "puppeteer": "^1.14.0"
   }
 }

@@ -1,5 +1,5 @@
-const puppet = require('./lib/vpuppet')
-const helper = require('./lib/vhelper')
+const puppet = require('../lib/vpuppet')
+const helper = require('../lib/vhelper')
 const fs = require('fs')
 var VP = new puppet(false)
 var Helper = new helper()
@@ -8,7 +8,7 @@ var Helper = new helper()
 
 async function runner() {
   // get the data from the url;
-  let data = await VP.getMeta('https://www.vlive.tv/video/122622?channelCode=EDBF')
+  let data = await VP.getMetaData('https://www.vlive.tv/video/122622?channelCode=EDBF')
   console.log('Meta data collected')
   let processed = await Helper.saveVODJson(data.vod_url)
   console.log('vod_play_videoInfo.json file has been saved')
@@ -26,4 +26,11 @@ async function runner() {
 
   })
 }
-runner()
+//runner()
+
+async function metaCollection() {
+  let data = await VP.getMetaData('https://www.vlive.tv/video/122622?channelCode=EDBF')
+  console.log(data)
+}
+
+metaCollection()

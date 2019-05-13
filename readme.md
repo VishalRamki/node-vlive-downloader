@@ -11,6 +11,18 @@ An automatic Vlive video downloader which, Given the URI:
 - [ ] Command line interface to run globally
 - [ ] Write Proper tests
 
+# Changelog
+
+## Meta - v0.1.4
+
+- Added the ability to collection additional metadata from the video's page.
+
+Variable Name | typeof | What is it
+--- | --- | ---
+`plays` | `integer` | Number of times the video has been played.
+`likes` | `integer` | Number of times the video has been liked.
+`date` | `string` | The approximated date the video was published. Due to the nature of VLive's time backdating we can not get an accurate timestamp, only an estimated **DATE**.
+
 # History
 
 I originally wrote a CLI version of this using `child_process` and `ffmpeg` after seeing @drklee3 's version of a vlive-downloader. Their code was great, but required more than just `ffmpeg` and it required you to manually get the `vod_play_videoInfo.json` file and pass it in as a command function.
@@ -100,6 +112,9 @@ Variable Name | typeof | What is it
 `vod_url` | `string` | A URI to the JSON File which contains the raw meta data that VLive's player uses.
 `channel` | `string` | Name of the Channel that uploaded the video.
 `title` | `string` | Name of the video being requested.
+`plays` | `integer` | Number of times the video has been played.
+`likes` | `integer` | Number of times the video has been liked.
+`date` | `string` | The approximated date the video was published. Due to the nature of VLive's time backdating we can not get an accurate timestamp, only an estimated **DATE**.
 
 ## Downloading The `vod_play_videoInfo.json` file
 
