@@ -13,7 +13,7 @@ An automatic Vlive video downloader which, Given the URI:
 
 # Changelog
 
-## Hotfix - v0.1.4.1
+## Hotfix - v0.1.5
 
 - Added a new proper working test, `test/advanced.js`. Disregard `test/basic_test.js`
 - Ensures that the library doesn't fail/crash/error out when a video with no captions is selected to download.
