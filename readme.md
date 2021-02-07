@@ -2,7 +2,7 @@
 
 An automatic Vlive video downloader which, Given the URI:
 
-1. Automatically downloads the `vod_play_videoInfo.json` file which is dynamically loaded.
+1. Automatically downloads the dynamically created `JSON` file.
 2. Downloads the Video format specified by a user string.
 3. Merges **ALL** the available subtitles with the file specified above into an `*.mkv` file
 
@@ -11,7 +11,24 @@ An automatic Vlive video downloader which, Given the URI:
 - [ ] Command line interface to run globally
 - [ ] Write Proper tests
 
+# Testing
+
+You can run the following which will attempt to gather metadata for a video, output the metadata, and download all subtitles and then attempt to download a 1080p video and then merge it in.
+
+```bash
+node test/advanced.js
+```
+
 # Changelog
+
+## 2021 Update - v0.2
+
+It has been almost two years since my last update, but driven by the recent forks and the star of this repo, I decided to fix it. The library originally broke with a VLive update sometime in 2019/2020. I wasn't keeping track of it. However, it seems that they did another update which, with a few tweaks to the parser I was able to have the library work just as before. So thank you to the two individuals for making me look at this library again.
+
+Also, some of the Readme needs to be updated as the structure of some of the meta data has changed, however, I wanted to quickly get this update out to the people who would like it.
+
+- Library now works with new VLive Update as of 2021/02/07.
+- Updated Browser parser to look for the JSON, and metadata, in the new locations.
 
 ## Hotfix - v0.1.5
 
@@ -83,7 +100,7 @@ const url = "YOUR URL HERE";
 
 ## Getting Meta Data from URI
 
-This will launch a headless `Chromium` browser, that will attach listeners to its network requests. Once it detects the `vod_play_videoInfo.json` file it will store its location, and once `networkidle0` fires, it will scrape the page for the additional meta data.
+This will launch a headless `Chromium` browser, that will attach listeners to its network requests. Once it detects the dynamically created JSON file it will store its location, and once `networkidle0` fires, it will scrape the page for the additional meta data.
 
 Example code using `Promises`
 
