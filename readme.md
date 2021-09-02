@@ -21,6 +21,25 @@ node test/advanced.js
 
 # Changelog
 
+## v0.3.0
+
+Downloader works as of `01/09/2021`
+
+Its been ~7months since my last update, and I just want to say: "vLive is doing something."
+
+Version bump because I needed to update the package dependencies due to security issues.
+
+My tests failed for two reasons:
+
+1. I updated my NodeJS environment so I had to change the way the tests use the imported library. I ended up back tracking on this because it was causing too much problems.
+2. vLive changed something in their Likes CSS Selector which broke my entire application - My Fault really.
+
+I proceeded to then update the library with the following:
+
+- Added a new `catch()` to each chain that asks the web page for values. This ensures that the Application can continue running and does not hang. If you encounter a `"X Cannot Be Parsed"` anywhere in your main Metadata file it means that vLive has updated their Web page.
+- Fixed an error which caused the browser to hang around after the web scraper failed for **any** reason.
+- Began writing in Comments in the source code for me and whoever may need to follow along.
+
 ## 2021 Update - v0.2
 
 It has been almost two years since my last update, but driven by the recent forks and the star of this repo, I decided to fix it. The library originally broke with a VLive update sometime in 2019/2020. I wasn't keeping track of it. However, it seems that they did another update which, with a few tweaks to the parser I was able to have the library work just as before. So thank you to the two individuals for making me look at this library again.
