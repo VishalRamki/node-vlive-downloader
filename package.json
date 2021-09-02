@@ -1,6 +1,6 @@
 {
   "name": "node-vlive-downloader",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A Promise-based video and meta info VLive downloader",
   "main": "index.js",
   "scripts": {
